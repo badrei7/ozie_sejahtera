@@ -10,6 +10,9 @@ COPY . /var/www/html/
 # Menginstall ekstensi PHP yang diperlukan
 RUN docker-php-ext-install mysqli
 
+# Menginstall nano
+RUN apt-get update && apt-get install -y nano
+
 # Mengatur konfigurasi Apache
 RUN a2enmod rewrite
 COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
