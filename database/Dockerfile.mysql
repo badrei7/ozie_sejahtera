@@ -1,0 +1,8 @@
+# Menggunakan image resmi MySQL
+FROM mysql:8.0
+
+# Mengatur variabel lingkungan
+ENV MYSQL_ROOT_PASSWORD alba
+
+# Menyalin file SQL ke dalam container
+COPY toko_online.sql /docker-entrypoint-initdb.d/toko_online.sql
